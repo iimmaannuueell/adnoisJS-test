@@ -1,9 +1,9 @@
-import SubCategory from 'App/Models/User'
+import SubCategory from 'App/Models/SubCategory'
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import { schema } from '@ioc:Adonis/Core/Validator'
 
 
-export default class SubCategoriessController {
+export default class SubCategoriesController {
 
     /**
      * Get all subCategory

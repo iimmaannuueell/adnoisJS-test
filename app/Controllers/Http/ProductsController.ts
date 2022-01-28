@@ -1,4 +1,4 @@
-import Product from 'App/Models/User'
+import Product from 'App/Models/Product'
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import { schema } from '@ioc:Adonis/Core/Validator'
 

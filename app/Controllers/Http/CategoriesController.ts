@@ -1,4 +1,4 @@
-import Category from 'App/Models/User'
+import Category from 'App/Models/Category'
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import { schema } from '@ioc:Adonis/Core/Validator'
 

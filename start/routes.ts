@@ -47,30 +47,30 @@ Route.group(() => {
 
 	/** Product **/
 	Route.group(() => {
-		Route.get('/', 'ProductController.index')
-		Route.get('/:id', 'ProductController.show')
-		Route.post('/create', 'ProductController.store')
-		Route.put('/update', 'ProductController.update')
-		Route.delete('/delete', 'ProductController.destory')
+		Route.get('/', 'ProductsController.index')
+		Route.get('/:id', 'ProductsController.show')
+		Route.post('/create', 'ProductsController.store')
+		Route.put('/update', 'ProductsController.update')
+		Route.delete('/:id/delete', 'ProductsController.destory')
 	}).middleware("auth:api").prefix('/products')
 
 
 	/** category **/
 	Route.group(() => {
-		Route.get('/', 'CategoryController.index')
-		Route.get('/:id', 'CategoryController.show')
-		Route.post('/create', 'CategoryController.store')
-		Route.put('/update', 'CategoryController.update')
-		Route.delete('/delete', 'CategoryController.destory')
+		Route.get('/', 'CategoriesController.index')
+		Route.get('/:id', 'CategoriesController.show')
+		Route.post('/create', 'CategoriesController.store')
+		Route.put('/update', 'CategoriesController.update')
+		Route.delete('/:id/delete', 'CategoriesController.destory')
 	}).middleware("auth:api").prefix('/categories')
 
 	/** sub category **/
 	Route.group(() => {
-		Route.get('/', 'SubCategoryProductController.index')
-		Route.get('/:id', 'SubCategoryProductController.show')
-		Route.post('/create', 'SubCategoryProductController.store')
-		Route.put('/update', 'SubCategoryProductController.update')
-		Route.delete('/delete', 'SubCategoryProductController.destory')
+		Route.get('/', 'SubCategoriesController.index')
+		Route.get('/:id', 'SubCategoriesController.show')
+		Route.post('/create', 'SubCategoriesController.store')
+		Route.put('/update', 'SubCategoriesController.update')
+		Route.delete('/:id/delete', 'SubCategoriesController.destory')
 	}).middleware("auth:api").prefix('/sub-categories');
 
 }).prefix('/api')
