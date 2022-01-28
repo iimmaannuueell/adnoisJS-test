@@ -99,10 +99,8 @@ export default class CategoriesController {
      * @param param0 
      * @returns json
      */
-     public async destroy({ params, request, response, }: HttpContextContract) {
-        const category = await Category.findOrFail(params.id);
-        category.fill( request.body() );
-        await category.save();
+     public async destroy({ params, response, }: HttpContextContract) {
+        const category = await Category.query().where('id', params.id).delete();
         
         let data = {
             success: true,

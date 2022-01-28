@@ -100,10 +100,11 @@ export default class SubCategoriesController {
      * @param param0 
      * @returns json
      */
-     public async destroy({ params, response, }: HttpContextContract) {
-        const subCategory = await SubCategory.findOrFail(params.id);
-        subCategory.delete();
-        await subCategory.save();
+     public async destroy({ params, response }: HttpContextContract) {
+        const subCategory = await SubCategory.query().where('id', params.id).delete();
+        // const subCategory = await SubCategory.findOrFail(params.id);
+        // subCategory.delete();
+        // await subCategory.save();
         
         let data = {
             success: true,

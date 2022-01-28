@@ -104,10 +104,8 @@ export default class ProductsController {
      * @param param0 
      * @returns json
      */
-     public async destroy({ params, request, response, }: HttpContextContract) {
-        const product = await Product.findOrFail(params.id);
-        product.fill(request.body());
-        await product.save();
+     public async destroy({ params, response, }: HttpContextContract) {
+        const product = await Product.query().where('id', params.id).delete();
         
         let data = {
             success: true,
