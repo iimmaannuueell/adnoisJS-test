@@ -3,15 +3,15 @@
 
 export default class ApiResponse {
 
-    //  async(msg: string, data: any) => {
-    //     return {
-    //         success: true,
-    //         message: msg,
-    //         data: data
-    //     }
-    // }
+     async successResponse(msg: string, data: any) {
+        return {
+            success: true,
+            message: msg,
+            data: data
+        }
+    }
 
-    errorResponse(msg: string) {
+    async errorResponse(msg: string) {
         return {
             success: false,
             message: msg,
@@ -21,4 +21,3 @@ export default class ApiResponse {
 
 }
 
-// module.exports = ApiResponse;

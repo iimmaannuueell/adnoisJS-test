@@ -44,4 +44,33 @@ Route.group(() => {
 		Route.post('/logout', 'AuthController.logout')
 	}).prefix('/auth')
 
+
+	/** Product **/
+	Route.group(() => {
+		Route.get('/', 'ProductController.index')
+		Route.get('/:id', 'ProductController.show')
+		Route.post('/create', 'ProductController.store')
+		Route.put('/update', 'ProductController.update')
+		Route.delete('/delete', 'ProductController.destory')
+	}).middleware("auth:api").prefix('/products')
+
+
+	/** category **/
+	Route.group(() => {
+		Route.get('/', 'CategoryController.index')
+		Route.get('/:id', 'CategoryController.show')
+		Route.post('/create', 'CategoryController.store')
+		Route.put('/update', 'CategoryController.update')
+		Route.delete('/delete', 'CategoryController.destory')
+	}).middleware("auth:api").prefix('/categories')
+
+	/** sub category **/
+	Route.group(() => {
+		Route.get('/', 'SubCategoryProductController.index')
+		Route.get('/:id', 'SubCategoryProductController.show')
+		Route.post('/create', 'SubCategoryProductController.store')
+		Route.put('/update', 'SubCategoryProductController.update')
+		Route.delete('/delete', 'SubCategoryProductController.destory')
+	}).middleware("auth:api").prefix('/sub-categories');
+
 }).prefix('/api')
