@@ -54,12 +54,8 @@ export default class SubCategoriesController {
          * Schema definition
          */
         const newsubCategorySchema = schema.create({
-            user_id: schema.number(),
             category_id: schema.number(),
-            sub_category_id: schema.number(),
             name: schema.string({}),
-            description: schema.string({}),
-            price: schema.number(),
         })
 
         /**
