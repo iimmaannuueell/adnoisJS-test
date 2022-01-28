@@ -51,7 +51,7 @@ Route.group(() => {
 		Route.get('/:id', 'ProductsController.show')
 		Route.post('/create', 'ProductsController.store')
 		Route.put('/update', 'ProductsController.update')
-		Route.delete('/:id/delete', 'ProductsController.destory')
+		Route.delete('/:id/delete', 'ProductsController.destroy')
 	}).middleware("auth:api").prefix('/products')
 
 
@@ -61,7 +61,7 @@ Route.group(() => {
 		Route.get('/:id', 'CategoriesController.show')
 		Route.post('/create', 'CategoriesController.store')
 		Route.put('/update', 'CategoriesController.update')
-		Route.delete('/:id/delete', 'CategoriesController.destory')
+		Route.delete('/:id/delete', 'CategoriesController.destroy')
 	}).middleware("auth:api").prefix('/categories')
 
 	/** sub category **/
@@ -70,7 +70,7 @@ Route.group(() => {
 		Route.get('/:id', 'SubCategoriesController.show')
 		Route.post('/create', 'SubCategoriesController.store')
 		Route.put('/update', 'SubCategoriesController.update')
-		Route.delete('/:id/delete', 'SubCategoriesController.destory')
+		Route.delete('/:id/delete', 'SubCategoriesController.destroy')
 	}).middleware("auth:api").prefix('/sub-categories');
 
 }).prefix('/api')
